@@ -161,7 +161,7 @@ SELECT
 FROM Employee as e     
 LEFT JOIN Client c ON e.EmployeeID = c.ResponsibleAdvisor
 WHERE e.Role = 'advisor'
-GROUP BY e.EmployeeID 
+GROUP BY e.EmployeeID;
 
 -- Skapar en view där man får en flagga om det är ett joint account samt antalet medkontohavare. Sorterat på antalet medkontohavare primärt, saldo sekundärt. Utan master accounts
 CREATE VIEW SortJointAccounts AS
@@ -224,5 +224,6 @@ BEGIN
         SET procedure_status = CONCAT('Succssess: Completed ', transaction_count, ' transactions');
     END IF;
 END||
+
 
 DELIMITER ;
